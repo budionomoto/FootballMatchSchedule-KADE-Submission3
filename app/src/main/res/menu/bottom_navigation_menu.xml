@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+            android:id="@+id/previousButtonId"
+            android:enabled="true"
+            android:title="@string/prevMatchString"
+            app:showAsAction="ifRoom"
+            android:icon="@drawable/ic_previous"/>
+    <item
+            android:id="@+id/nextButtonId"
+            android:enabled="true"
+            android:title="@string/nextMatchString"
+            app:showAsAction="ifRoom"
+            android:icon="@drawable/ic_previous"/>
+    <!--android:icon="@drawable/ic_favorites"-->
+    <item
+            android:id="@+id/favoriteButtonId"
+            android:enabled="true"
+            android:title="@string/favoMatchString"
+            app:showAsAction="ifRoom"
+            android:icon="@drawable/ic_favorites"/>
+</menu>

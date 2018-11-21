@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--menu kanan atas -->
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+            android:id="@+id/add_to_favorite_id"
+            android:title="@string/favoMatchString"
+            android:iconifiedByDefault="false"
+            app:showAsAction="ifRoom"
+    />
+
+</menu>
+<!--android:icon="@drawable/ic_add_to_favorites"-->

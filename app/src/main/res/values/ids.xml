@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="dateEventIdR" type="id"/>
+    <item name="homeTeamIdR" type="id"/>
+    <item name="homeScoreIdR" type="id"/>
+    <item name="awayTeamIdR" type="id"/>
+    <item name="awayScoreIdR" type="id"/>
+    <item name="listEvent2" type="id"/>
+    <item name="spinner2" type="id"/>
+</resources>
