@@ -539,8 +539,12 @@ class DetailActivity : AppCompatActivity(), MatchDetailView {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.detail_menu, menu)
         menuItem = menu
+
         setFavorite()
+
+        //if (this::modelMatchDetail.isInitialized) return false else return true
         return true
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -550,9 +554,15 @@ class DetailActivity : AppCompatActivity(), MatchDetailView {
                 true
             }
             add_to_favorite_id -> {
-                if (isFavorite) removeFromFavorite() else addToFavorite()
+                if (this::modelMatchDetail.isInitialized) {
+                    //toast("koneksi").show()
+                    if (isFavorite) removeFromFavorite() else addToFavorite()
+                    isFavorite = !isFavorite
+                }else{
+                    toast("Koneksi Internet sedang lambat/tidak ada koneksi internet").show()
+                }
 
-                isFavorite = !isFavorite
+
                 setFavorite()
 
                 true
