@@ -1,9 +1,12 @@
 package id.xyzsystem.budiono.mission3jumat.utils
 
 import android.view.View
+import kotlinx.coroutines.Dispatchers
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.coroutines.CoroutineContext
 
+//import kotlin.coroutines.experimental.CoroutineContext
 
 fun View.visible() {
     visibility = View.VISIBLE
@@ -19,3 +22,8 @@ fun formatStdTanggal(tglnya: Date?):String {
 
     return formatter.format(tglnya)
 }
+
+open class CoroutineContextProvider {
+    open val main: CoroutineContext by lazy {Dispatchers.Main }
+}
+
