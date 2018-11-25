@@ -8,8 +8,6 @@ import id.xyzsystem.budiono.mission3jumat.utils.CoroutineContextProvider
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import okhttp3.Dispatcher
-import org.jetbrains.anko.coroutines.experimental.bg
 
 class MatchPresenter(private val view: MatchView,
                      private val apiRepository: ApiRepository,
