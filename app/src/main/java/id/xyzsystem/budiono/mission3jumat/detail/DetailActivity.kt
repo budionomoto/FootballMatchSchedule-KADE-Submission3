@@ -572,10 +572,6 @@ class DetailActivity : AppCompatActivity(), MatchDetailView {
         }
     }
 
-    override fun onBackPressed() {
-        super.onBackPressed()
-    }
-
     private fun addToFavorite(){
         //val formatter = SimpleDateFormat("EEEE, dd MMM yyyy", Locale("in"))
         //val tgldiformat = formatter.format(modelMatchDetail.eventDate)
