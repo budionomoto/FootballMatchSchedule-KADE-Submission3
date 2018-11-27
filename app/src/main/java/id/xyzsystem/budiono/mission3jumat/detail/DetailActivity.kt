@@ -550,7 +550,9 @@ class DetailActivity : AppCompatActivity(), MatchDetailView {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             android.R.id.home -> {
-                finish()
+                if (this::modelMatchDetail.isInitialized) {
+                    finish()
+                }
                 true
             }
             add_to_favorite_id -> {
