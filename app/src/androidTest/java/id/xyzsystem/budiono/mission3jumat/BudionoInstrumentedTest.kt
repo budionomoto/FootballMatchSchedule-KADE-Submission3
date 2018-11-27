@@ -19,6 +19,8 @@ class MainActivityTest{
     @Rule
     @JvmField var ActivityRule = ActivityTestRule(MainActivity::class.java)
 
+    /* Behaviour RecylcerView */
+
     @Test
     fun testRecylerViewBehaviour(){
         /* memastikan recyclerView dengan id 'listEvent2' ditampilkan */
@@ -32,37 +34,52 @@ class MainActivityTest{
 
     }
 
+    /* Behaviour Prev. Match */
     @Test
     fun TestAppBehaviour(){
-        /* memastikan bahwa terdapat sebuah spinner yang ditampilkan */
-        onView(withId(spinner2)).check(matches(isDisplayed()))
 
-        /* memberi tindakan klik pada spinner */
-        onView(withText("Spanish La Liga")).perform(click())
-
-        /* memberi tindakan klik pada sebuah teks yang ditentukan */
-        onView(withText("Barcelona")).check(matches(isDisplayed()))
-
-        /* memastikan bahwa suatu teks telah ditampilkan dan memberikan tindakan  klik pada teks tesebut */
-        onView(withText("Barcelona")).perform(click())
-
-        /* memastikan tombol favorite telah ditampilkan */
-        onView(withId(add_to_favorite_id)).check(matches(isDisplayed()))
-
-        /* memberi tindakan klik pada tombol favorite */
-        onView(withId(add_to_favorite_id)).perform(click())
-
-        /* memastikan teks 'Added to favorites' telah ditampilkan (snackbar)*/
-        onView(withText("Added to favorites")).check(matches(isDisplayed()))
-
-        /* menekan tombol kembali */
-        pressBack()
-
-        /* memastikan sebuah 'BottomNavigationView' telah ditampilkan */
+        /* 1) memastikan bahwa terdapat sebuah spinner yang ditampilkan */
         onView(withId(bottom_navigation)).check(matches(isDisplayed()))
 
-        /* memberikan tindakan klik pada sebuah menu di 'BottomNavigationView' */
-        onView(withId(favoriteButtonId)).perform(click())
+        /* 2) memastikan bahwa terdapat sebuah spinner yang ditampilkan */
+        onView(withId(spinner2)).check(matches(isDisplayed()))
+
+        /* 3) tindakan klik pada spinner */
+        onView(withId(spinner2)).perform(click())
+
+        /* 4) memberi tindakan klik pada spinner */
+        onView(withText("Spanish La Liga")).perform(click())
+
+        /* 5) melakukan scroll pada recyclerview sampai dengan posisi ke-10*/
+        onView(withId(listEvent2)).perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(5))
+
+        /* 6) klik item di posisi 10, untuk memastikan tampilkan detail*/
+        onView(withId(listEvent2)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(5, click()))
+
+
+        /* 7) memastikan tombol favorite telah ditampilkan */
+        onView(withId(add_to_favorite_id)).check(matches(isDisplayed()))
+
+        /* 8) memberi tindakan klik pada tombol favorite */
+        onView(withId(add_to_favorite_id)).perform(click())
+
+        /* 9) memastikan teks 'Added to favorite' telah ditampilkan (snackbar)*/
+//        onView(withText("Added to favorite")).check(matches(isDisplayed()))
+
+        /* 10) menekan tombol kembali */
+        pressBack()
+
+        /* 11) memastikan sebuah 'BottomNavigationView' telah ditampilkan */
+        onView(withId(bottom_navigation)).check(matches(isDisplayed()))
+
+        /* 12) memberikan tindakan klik pada sebuah menu favorite match di 'BottomNavigationView' */
+        onView(withId(R.id.favoriteButtonId)).perform(click())
+
+        /* 13) memberikan tindakan klik pada sebuah menu next match di 'BottomNavigationView' */
+        onView(withId(nextButtonId)).perform(click())
+
+        /* 14) memberikan tindakan klik pada sebuah menu previous match di 'BottomNavigationView' */
+        onView(withId(previousButtonId)).perform(click())
 
     }
 }
