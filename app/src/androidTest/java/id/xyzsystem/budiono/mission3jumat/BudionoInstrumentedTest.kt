@@ -1,8 +1,8 @@
 package id.xyzsystem.budiono.mission3jumat
 
+import android.support.test.espresso.Espresso
 import android.support.test.espresso.Espresso.onView
 import android.support.test.espresso.action.ViewActions.click
-import android.support.test.espresso.action.ViewActions.pressBack
 import android.support.test.espresso.assertion.ViewAssertions.matches
 import android.support.test.espresso.contrib.RecyclerViewActions
 import android.support.test.espresso.matcher.ViewMatchers.*
@@ -13,6 +13,7 @@ import id.xyzsystem.budiono.mission3jumat.R.id.*
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
+import java.lang.Thread.sleep
 
 @RunWith(AndroidJUnit4::class)
 class MainActivityTest{
@@ -34,52 +35,75 @@ class MainActivityTest{
 
     }
 
-    /* Behaviour Prev. Match */
+    /* Behaviour Match */
     @Test
     fun TestAppBehaviour(){
 
         /* 1) memastikan bahwa terdapat sebuah spinner yang ditampilkan */
-        onView(withId(bottom_navigation)).check(matches(isDisplayed()))
-
-        /* 2) memastikan bahwa terdapat sebuah spinner yang ditampilkan */
         onView(withId(spinner2)).check(matches(isDisplayed()))
 
-        /* 3) tindakan klik pada spinner */
+        /* 2) tindakan klik pada spinner */
         onView(withId(spinner2)).perform(click())
 
-        /* 4) memberi tindakan klik pada spinner */
+        /* 3) memberi tindakan klik pada spinner */
         onView(withText("Spanish La Liga")).perform(click())
 
-        /* 5) melakukan scroll pada recyclerview sampai dengan posisi ke-10*/
+        /* 4) melakukan scroll pada recyclerview sampai dengan posisi ke-5*/
         onView(withId(listEvent2)).perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(5))
 
-        /* 6) klik item di posisi 10, untuk memastikan tampilkan detail*/
+        /* 5) klik item di posisi 5, untuk memastikan tampilkan detail*/
         onView(withId(listEvent2)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(5, click()))
 
-
-        /* 7) memastikan tombol favorite telah ditampilkan */
+        /* 6) memastikan tombol favorite telah ditampilkan */
         onView(withId(add_to_favorite_id)).check(matches(isDisplayed()))
 
-        /* 8) memberi tindakan klik pada tombol favorite */
+        /* 7) memberi tindakan klik pada tombol favorite */
         onView(withId(add_to_favorite_id)).perform(click())
 
-        /* 9) memastikan teks 'Added to favorite' telah ditampilkan (snackbar)*/
-//        onView(withText("Added to favorite")).check(matches(isDisplayed()))
+        /* 8) menekan tombol kembali */
+        Espresso.pressBack()// pressBack()
 
-        /* 10) menekan tombol kembali */
-        pressBack()
-
-        /* 11) memastikan sebuah 'BottomNavigationView' telah ditampilkan */
+        /* 9) memastikan sebuah 'BottomNavigationView' telah ditampilkan */
         onView(withId(bottom_navigation)).check(matches(isDisplayed()))
 
-        /* 12) memberikan tindakan klik pada sebuah menu favorite match di 'BottomNavigationView' */
+        /* 10) memberikan tindakan klik pada sebuah menu favorite match di 'BottomNavigationView' */
         onView(withId(R.id.favoriteButtonId)).perform(click())
 
-        /* 13) memberikan tindakan klik pada sebuah menu next match di 'BottomNavigationView' */
+        /* 11) memberikan tindakan klik pada sebuah menu previous match di 'BottomNavigationView' */
+        onView(withId(previousButtonId)).perform(click())
+
+        /* 12) memberikan tindakan klik pada sebuah menu next match di 'BottomNavigationView' */
         onView(withId(nextButtonId)).perform(click())
 
-        /* 14) memberikan tindakan klik pada sebuah menu previous match di 'BottomNavigationView' */
-        onView(withId(previousButtonId)).perform(click())
+        /* 13) memastikan bahwa terdapat sebuah spinner yang ditampilkan */
+        onView(withId(spinner2)).check(matches(isDisplayed()))
+
+        /* 14) tindakan klik pada spinner */
+        onView(withId(spinner2)).perform(click())
+
+        /* 15) memberi tindakan klik pada spinner */
+        onView(withText("Spanish La Liga")).perform(click())
+
+        /* 16) melakukan scroll pada recyclerview sampai dengan posisi ke-5*/
+        onView(withId(listEvent2)).perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(5))
+
+        /* 17) klik item di posisi 5, untuk memastikan tampilkan detail*/
+        onView(withId(listEvent2)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(5, click()))
+
+        /* 18) memastikan tombol favorite telah ditampilkan */
+        onView(withId(add_to_favorite_id)).check(matches(isDisplayed()))
+
+        /* 19) memberi tindakan klik pada tombol favorite */
+        onView(withId(add_to_favorite_id)).perform(click())
+
+        /* 20) menekan tombol kembali */
+        Espresso.pressBack()// pressBack()
+
+        /* 21) memberikan tindakan klik pada sebuah menu favorite match di 'BottomNavigationView' */
+        onView(withId(R.id.favoriteButtonId)).perform(click())
+
+        /* menunggu sebentar, untuk melihat item view favorite */
+        sleep(1000)
 
     }
 }
