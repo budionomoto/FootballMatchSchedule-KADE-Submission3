@@ -20,4 +20,13 @@
             android:title="@string/favoMatchString"
             app:showAsAction="ifRoom"
             android:icon="@drawable/ic_favorites"/>
+
+    <!--teams-->
+    <item
+            android:id="@+id/teamsButtonId"
+            android:enabled="true"
+            android:title="@string/teamsString"
+            app:showAsAction="ifRoom"
+            android:icon="@drawable/ic_favorites"/>
+
 </menu>
