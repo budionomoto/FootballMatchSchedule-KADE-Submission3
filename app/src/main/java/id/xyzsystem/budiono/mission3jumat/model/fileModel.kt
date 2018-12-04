@@ -131,3 +131,15 @@ data class Team(
     @SerializedName("strTeamBadge")
     var teamBadge: String? = null
 )
+
+data class Teams(
+    @SerializedName("idTeam")
+    var teamid: String? = null,
+
+    @SerializedName("strTeamBadge")
+    var teamBadge: String? = null,
+
+    @SerializedName("strTeam")
+    var teamName: String? = null
+
+)
