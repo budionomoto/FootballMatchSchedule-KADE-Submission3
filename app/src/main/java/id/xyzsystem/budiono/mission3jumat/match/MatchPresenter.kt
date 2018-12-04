@@ -35,7 +35,6 @@ class MatchPresenter(private val view: MatchView,
         */
 
         /* sesudah penggunaan coroutine */
-        view.showLoading()
         GlobalScope.launch(Dispatchers.Main){
             val data = gson.fromJson(apiRepository
                     .doRequest(TheSportDBApi.getMatch(leagueID,nextMatch)).await(),
