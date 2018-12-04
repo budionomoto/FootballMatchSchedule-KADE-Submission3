@@ -7,3 +7,5 @@ data class MatchDetailResponse(val events: List<MatchDetail>)
 data class TeamResponse(val teams: List<Team>)
 
 data class TeamsResponse(val teams: List<Teams>)
+
+data class DetailTeamsResponse(val teams: List<LookupTeamModel>)
