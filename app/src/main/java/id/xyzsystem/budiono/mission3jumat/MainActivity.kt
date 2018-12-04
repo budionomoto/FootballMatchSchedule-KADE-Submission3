@@ -2,10 +2,10 @@ package id.xyzsystem.budiono.mission3jumat
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import id.xyzsystem.budiono.mission3jumat.R.id.favoriteButtonId
-import id.xyzsystem.budiono.mission3jumat.R.id.nextButtonId
+import id.xyzsystem.budiono.mission3jumat.R.id.*
 import id.xyzsystem.budiono.mission3jumat.favorite.FavoriteFragment
 import id.xyzsystem.budiono.mission3jumat.match.MatchFragment
+import id.xyzsystem.budiono.mission3jumat.teams.TeamsFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 var snextMatch: String = "previous"
@@ -26,6 +26,9 @@ class MainActivity : AppCompatActivity() {
                 }
                 favoriteButtonId -> {
                     loadFavoritesMatchFragment(savedInstanceState)
+                }
+                teamsButtonId -> {
+                    loadTeamsFragment(savedInstanceState)
                 }
             }
             true
@@ -73,6 +76,16 @@ class MainActivity : AppCompatActivity() {
                     FavoriteFragment(), FavoriteFragment::class.java.simpleName)
                 .commit()
 
+        }
+    }
+
+    private fun loadTeamsFragment(savedInstanceState: Bundle?){
+        if (savedInstanceState == null) {
+            supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.main_container,
+                    TeamsFragment(), TeamsFragment::class.java.simpleName)
+                .commit()
         }
     }
 
