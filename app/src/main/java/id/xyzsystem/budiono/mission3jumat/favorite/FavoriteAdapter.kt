@@ -9,7 +9,6 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import id.xyzsystem.budiono.mission3jumat.R
 import id.xyzsystem.budiono.mission3jumat.R.id.*
-import id.xyzsystem.budiono.mission3jumat.R.string.versusString
 import id.xyzsystem.budiono.mission3jumat.model.Favorite
 import org.jetbrains.anko.*
 
