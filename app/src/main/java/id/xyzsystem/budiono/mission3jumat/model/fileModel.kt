@@ -143,3 +143,27 @@ data class Teams(
     var teamName: String? = null
 
 )
+
+/*
+    API: getTeam
+* */
+data class LookupTeamModel(
+    @SerializedName ("idTeam") /* 133739*/
+    var teamId: String? = null,
+
+    @SerializedName ("strTeamBadge") /* logo */
+    var teamBadgeStr: String? = null,
+
+    @SerializedName ("strTeam") /* Barcelona */
+    var teamStr: String? = null,
+
+    @SerializedName ("intFormedYear") /* 1899 */
+    var formedYearInt: String? = null,
+
+    @SerializedName ("strStadium") /* camp nou */
+    var stadiumStr: String? = null,
+
+    @SerializedName ("strDescriptionEN") /* overview */
+    var descriptionENStr: String? = null
+
+)
