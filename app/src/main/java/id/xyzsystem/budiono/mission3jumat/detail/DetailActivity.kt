@@ -487,10 +487,7 @@ class DetailActivity : AppCompatActivity(), MatchDetailView {
 
         swipeRefresh.isRefreshing = false
 
-        //val formatter = SimpleDateFormat("EEEE, dd MMM yyyy", Locale("in"))
-        //val setelahdiformat = formatter.format(data[0].eventDate)
-
-        dateEventTV.text = formatStdTanggal(data[0].eventDate)//setelahdiformat.toString()
+        dateEventTV.text = formatStdTanggal(data[0].eventDate)
 
         homeScoreTV.text = if(data[0].homeScore.toString()=="null") "0" else data[0].homeScore.toString()
         awayScoreTV.text = if(data[0].awayScore.toString()=="null") "0" else data[0].awayScore.toString()
@@ -542,7 +539,6 @@ class DetailActivity : AppCompatActivity(), MatchDetailView {
 
         setFavorite()
 
-        //if (this::modelMatchDetail.isInitialized) return false else return true
         return true
 
     }
@@ -575,10 +571,6 @@ class DetailActivity : AppCompatActivity(), MatchDetailView {
     }
 
     private fun addToFavorite(){
-        //val formatter = SimpleDateFormat("EEEE, dd MMM yyyy", Locale("in"))
-        //val tgldiformat = formatter.format(modelMatchDetail.eventDate)
-        //formatStdTanggal(modelMatchDetail.eventDate)
-
         try {
             database.use {
                 insert(
