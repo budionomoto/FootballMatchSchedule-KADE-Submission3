@@ -5,15 +5,15 @@ import id.xyzsystem.budiono.mission3jumat.api.ApiRepository
 import id.xyzsystem.budiono.mission3jumat.api.TheSportDBApi
 import id.xyzsystem.budiono.mission3jumat.model.MatchDetailResponse
 import id.xyzsystem.budiono.mission3jumat.model.TeamResponse
+import id.xyzsystem.budiono.mission3jumat.utils.CoroutineContextProvider
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.uiThread
 
 class MatchDetailPresenter(private val view: MatchDetailView,
                            private val apiRepository: ApiRepository,
-                           private val gson: Gson
+                           private val gson: Gson,
+                           private val context: CoroutineContextProvider = CoroutineContextProvider()
 ) {
     /* sebelum penggunaan Coroutine */
     /*
@@ -48,7 +48,8 @@ class MatchDetailPresenter(private val view: MatchDetailView,
 
 class TeamDetailPresenter(private val view: MatchDetailView,
                           private val apiRepository: ApiRepository,
-                          private val gson: Gson
+                          private val gson: Gson,
+                          private val context: CoroutineContextProvider = CoroutineContextProvider()
 ) {
     /* sebelum penggunaan Coroutine */
     /*
