@@ -29,7 +29,6 @@ import org.jetbrains.anko.support.v4.swipeRefreshLayout
 
 
 class MatchFragment: Fragment(), AnkoComponent<Context>, MatchView {
-
     private var listMatch: MutableList<Match> = mutableListOf()
     private lateinit var adapter: MatchAdapter
     private lateinit var presenter: MatchPresenter
