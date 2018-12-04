@@ -19,6 +19,7 @@ import org.jetbrains.anko.db.select
 import org.jetbrains.anko.recyclerview.v7.recyclerView
 import org.jetbrains.anko.support.v4.onRefresh
 import org.jetbrains.anko.support.v4.swipeRefreshLayout
+import id.xyzsystem.budiono.mission3jumat.R.id.listEventFav
 
 class FavoriteFragment : Fragment(), AnkoComponent<Context> {
     private var favorites: MutableList<Favorite> = mutableListOf()
@@ -73,6 +74,8 @@ class FavoriteFragment : Fragment(), AnkoComponent<Context> {
                     android.R.color.holo_red_light)
 
                 listEvent = recyclerView {
+                    id = listEventFav
+
                     lparams (width = matchParent, height = wrapContent)
                     layoutManager = LinearLayoutManager(ctx)
                 }
