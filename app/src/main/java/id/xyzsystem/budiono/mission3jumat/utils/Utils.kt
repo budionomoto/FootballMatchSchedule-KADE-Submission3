@@ -6,8 +6,6 @@ import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.coroutines.CoroutineContext
 
-//import kotlin.coroutines.experimental.CoroutineContext
-
 fun View.visible() {
     visibility = View.VISIBLE
 }
@@ -18,8 +16,6 @@ fun View.invisible() {
 
 fun formatStdTanggal(tglnya: Date?):String {
     val formatter = SimpleDateFormat("EEEE, dd MMM yyyy", Locale("in"))
-    //val tgldiformat = formatter.format(tglnya)
-
     return formatter.format(tglnya)
 }
 
