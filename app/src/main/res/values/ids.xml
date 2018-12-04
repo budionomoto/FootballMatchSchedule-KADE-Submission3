@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <item name="dateEventIdR" type="id"/>
     <item name="homeTeamIdR" type="id"/>
     <item name="homeScoreIdR" type="id"/>
@@ -8,4 +7,8 @@
     <item name="awayScoreIdR" type="id"/>
     <item name="listEvent2" type="id"/>
     <item name="spinner2" type="id"/>
+    <item name="listEventFav" type="id"/>
+    <item name="team_badge" type="id"/>
+    <item name="team_name" type="id"/>
+    <item name="spinner3" type="id"/>
 </resources>
