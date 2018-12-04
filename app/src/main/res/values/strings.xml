@@ -3,7 +3,7 @@
     <string name="prevMatchString">Prev. Match</string>
     <string name="nextMatchString">Next Match</string>
     <string name="favoMatchString">Favorites</string>
-    <string name="versusString"> VS </string>
+    <string name="versusString">VS</string>
     <string name="GoalsString">Goals</string>
     <string name="shotsString">Shots</string>
     <string name="lineupsString">Lineups</string>
@@ -13,6 +13,7 @@
     <string name="forwardString">Forward</string>
     <string name="subtitutesString">Subtitutes</string>
     <string name="verusString2">VS</string>
+    <string name="teamsString">Teams</string>
 
     <array name="arrayLeagueName">
         <item>English Premier League</item>
